@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<title>Para Isadora Fernanda ❤️</title>
+<style>
+/* Fundo preto elegante */
+body {
+    margin: 0;
+    overflow: hidden;
+    background: radial-gradient(circle at center, #000000, #0a0a0a);
+}
+
+/* Coração grande pulsando */
+.coracao {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 260px;
+    color: #ff4d6d;
+    opacity: 0.25;
+    animation: pulsar 1.5s infinite;
+    z-index: 1;
+}
+
+@keyframes pulsar {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.2); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Estrelas */
+.estrela {
+    position: absolute;
+    color: white;
+    font-size: 12px;
+    animation: piscar 2s infinite alternate;
+}
+
+@keyframes piscar {
+    from { opacity: 0.2; }
+    to { opacity: 1; }
+}
+
+/* Rosas caindo */
+.rosa {
+    position: absolute;
+    top: -20px;
+    font-size: 28px;
+    animation: cair linear infinite;
+}
+
+@keyframes cair {
+    to { transform: translateY(100vh); }
+}
+
+/* Corações subindo */
+.coracaoSubindo {
+    position: absolute;
+    bottom: -20px;
+    font-size: 22px;
+    color: #ff4d6d;
+    animation: subir linear infinite;
+}
+
+@keyframes subir {
+    to { transform: translateY(-110vh); }
+}
+</style>
+</head>
+<body>
+
+<!-- Coração pulsando atrás -->
+<div class="coracao">❤️</div>
+
+<script>
+// Criar estrelas
+function criarEstrela() {
+    const estrela = document.createElement("div");
+    estrela.className = "estrela";
+    estrela.innerHTML = "✨";
+    estrela.style.left = Math.random() * 100 + "vw";
+    estrela.style.top = Math.random() * 100 + "vh";
+    document.body.appendChild(estrela);
+}
+for (let i = 0; i < 80; i++) criarEstrela();
+
+// Criar rosas caindo
+function criarRosa() {
+    const rosa = document.createElement("div");
+    rosa.className = "rosa";
+    rosa.innerHTML = "🌹";
+    rosa.style.left = Math.random() * 100 + "vw";
+    rosa.style.animationDuration = (4 + Math.random() * 4) + "s";
+    document.body.appendChild(rosa);
+    setTimeout(() => rosa.remove(), 8000);
+}
+setInterval(criarRosa, 400);
+
+// Criar corações subindo
+function criarCoracao() {
+    const c = document.createElement("div");
+    c.className = "coracaoSubindo";
+    c.innerHTML = "💖";
+    c.style.left = Math.random() * 100 + "vw";
+    c.style.animationDuration = (4 + Math.random() * 4) + "s";
+    document.body.appendChild(c);
+    setTimeout(() => c.remove(), 8000);
+}
+setInterval(criarCoracao, 800);
+</script>
+
+</body>
+</html>
